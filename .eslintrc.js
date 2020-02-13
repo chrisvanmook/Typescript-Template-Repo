@@ -12,22 +12,13 @@ module.exports = {
     SharedArrayBuffer: 'readonly',
   },
   parserOptions: {
+    project: './tsconfig.json',
     sourceType: 'module',
     ecmaVersion: 2018,
   },
-  extends: ['airbnb', 'prettier'],
+  extends: ['standard-with-typescript', 'prettier'],
   rules: {
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'global-require': 0,
     'prettier/prettier': ['error'],
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        vars: 'all',
-        args: 'after-used',
-        ignoreRestSiblings: false,
-      },
-    ],
     'import/extensions': [
       'error',
       'ignorePackages',

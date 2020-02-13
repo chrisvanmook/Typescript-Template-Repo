@@ -1,4 +1,6 @@
 es
+lib
+dist
 node_modules
 *.d.ts
 *.map

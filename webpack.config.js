@@ -48,6 +48,8 @@ module.exports = {
   },
   plugins: [
     new CheckerPlugin(),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './example/index.html',
+    }),
   ],
 }
