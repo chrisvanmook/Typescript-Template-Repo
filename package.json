@@ -55,7 +55,7 @@
     "jest-cli": "^25.4.0",
     "lint-staged": "^10.1.7",
     "prettier": "^2.0.5",
-    "style-loader": "^1.1.4",
+    "style-loader": "^1.2.0",
     "ts-jest": "^25.4.0",
     "typescript": "^3.8.3",
     "webpack": "^4.43.0",
