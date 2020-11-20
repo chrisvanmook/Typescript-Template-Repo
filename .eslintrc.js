@@ -14,27 +14,15 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.json',
     sourceType: 'module',
-    ecmaVersion: 2018,
+    ecmaVersion: 2020,
   },
-  extends: ['standard-with-typescript', 'prettier'],
+  extends: [
+    'standard-with-typescript',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+  ],
   rules: {
     'prettier/prettier': ['error'],
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-      },
-    ],
-  },
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.ts', '.jsx', '.tsx'],
-      },
-    },
   },
 }

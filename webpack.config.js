@@ -1,5 +1,5 @@
-const { CheckerPlugin } = require('awesome-typescript-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const path = require('path')
 
 module.exports = {
@@ -22,10 +22,12 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader',
+        loader: "ts-loader",
+        exclude: /node_modules/,
         options: {
-          configFileName: './tsconfig.json',
-        },
+          // disable type checker - we will use it in fork plugin
+          transpileOnly: true
+        }
       },
       {
         test: /\.css$/i,
@@ -47,7 +49,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CheckerPlugin(),
+    new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './example/index.html',
     }),
